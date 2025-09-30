@@ -1,0 +1,65 @@
+@use "assets/reset";
+@use "assets/variables" as *;
+
+body {
+    inline-size: 100vw;
+    block-size: 100vh;
+    background-color: $color-blue-950;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-300;
+    margin: .75rem;
+    background-color: $color-blue-900;
+    padding: $spacing-300;
+    border-radius: .9375rem;
+    font-family: $font-family;
+
+    .hero-container {
+        border-radius: .5rem;
+        overflow: hidden;
+    }
+
+    .title {
+        color: $color-white;
+        font-size: 1.5rem;
+        line-height: 1.45;
+        font-weight: 600;
+        margin-block-end: $spacing-200;
+    }
+
+    .desc {
+        color: $color-blue-500;
+        font-size: 1.125rem;
+        font-weight: 300;
+    }
+
+    .price-time-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .price {
+        display: flex;
+        gap: $spacing-100
+    }
+
+    .price-text {
+        color: $color-cyan-400;
+        font-size: 1rem;
+        font-weight: 600;
+        text-wrap: nowrap;
+    }
+
+    .time {
+        display: flex;
+    }
+}

@@ -1,0 +1,91 @@
+/* RESET - Start */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*RESET - stop*/
+body {
+  inline-size: 100vw;
+  block-size: 100vh;
+  background-color: rgb(13, 25, 44);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0.75rem;
+  background-color: rgb(21, 38, 63);
+  padding: 1.5rem;
+  border-radius: 0.9375rem;
+  font-family: "Outfit", sans-serif;
+}
+.card .hero-container {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.card .title {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  line-height: 1.45;
+  font-weight: 600;
+  margin-block-end: 1rem;
+}
+.card .desc {
+  color: rgb(139, 172, 217);
+  font-size: 1.125rem;
+  font-weight: 300;
+}
+.card .price-time-container {
+  display: flex;
+  justify-content: space-between;
+}
+.card .price {
+  display: flex;
+  gap: 0.5rem;
+}
+.card .price-text {
+  color: rgb(0, 255, 248);
+  font-size: 1rem;
+  font-weight: 600;
+  text-wrap: nowrap;
+}
+.card .time {
+  display: flex;
+}
