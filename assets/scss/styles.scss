@@ -14,9 +14,6 @@ body {
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    gap: $spacing-300;
     margin: .75rem;
     background-color: $color-blue-900;
     padding: $spacing-300;
@@ -24,8 +21,25 @@ body {
     font-family: $font-family;
 
     .hero-container {
+        position: relative;
         border-radius: .5rem;
         overflow: hidden;
+    }
+
+    .hero-container::after {
+        content: "";
+        position: absolute;
+        background: url("../images/icon-view.svg") no-repeat center rgba($color-cyan-400, .5);
+        top: 0;
+        left: 0;
+        inline-size: 100%;
+        block-size: 100%;
+        opacity: 0;
+        transition: .5s;
+    }
+
+    .hero-container:hover::after {
+        opacity: 1;
     }
 
     .title {
@@ -33,7 +47,12 @@ body {
         font-size: 1.5rem;
         line-height: 1.45;
         font-weight: 600;
-        margin-block-end: $spacing-200;
+        text-decoration: none;
+        transition: .5s;
+    }
+
+    .title:hover {
+        color: $color-cyan-400;
     }
 
     .desc {
@@ -49,7 +68,7 @@ body {
 
     .price {
         display: flex;
-        gap: $spacing-100
+        align-items: center;
     }
 
     .price-text {
@@ -61,5 +80,59 @@ body {
 
     .time {
         display: flex;
+        align-items: center;
+    }
+
+    .time-text {
+        color: $color-blue-500;
+        font-size: 1rem;
+    }
+
+    .line {
+        color: $color-blue-800;
+        height: 1px;   
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+    }
+
+    .avatar-container {
+        border: solid 1px $color-white;
+        border-radius: 50%;
+    }
+
+    .author {
+        color: $color-blue-500;
+        font-size: 1rem;
+    }
+
+    .name {
+        color: $color-white;
+        text-decoration: none;
+        transition: .5s;
+    }
+
+    .name:hover {
+        color: $color-cyan-400;
     }
 }
+
+.u-flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.u-gap-1 {
+    gap: $spacing-100;
+}
+
+.u-gap-2 {
+    gap: $spacing-200;
+}
+
+.u-gap-3 {
+    gap: $spacing-300;
+}
+
