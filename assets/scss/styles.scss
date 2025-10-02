@@ -1,5 +1,6 @@
 @use "assets/reset";
 @use "assets/variables" as *;
+@use "assets/mixins" as *;
 
 body {
     inline-size: 100vw;
@@ -11,22 +12,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    inline-size: 100%;
+    block-size: 100%;
 }
 
 .card {
-    margin: .75rem;
+    @include flex-col($spacing-300);
+    inline-size: 21.875rem;
+    block-size: 37.25rem;
     background-color: $color-blue-900;
     padding: $spacing-300;
     border-radius: .9375rem;
     font-family: $font-family;
 
-    .hero-container {
+    &__hero-container {
         position: relative;
         border-radius: .5rem;
         overflow: hidden;
     }
 
-    .hero-container::after {
+    &__hero-container::after {
         content: "";
         position: absolute;
         background: url("../images/icon-view.svg") no-repeat center rgba($color-cyan-400, .5);
@@ -38,11 +43,19 @@ body {
         transition: .5s;
     }
 
-    .hero-container:hover::after {
+    &__hero-container:hover::after {
         opacity: 1;
     }
 
-    .title {
+    &__content {
+        @include flex-col($spacing-300);
+    }
+
+    &__text {
+        @include flex-col($spacing-200);
+    }
+
+    &__title {
         color: $color-white;
         font-size: 1.5rem;
         line-height: 1.45;
@@ -51,88 +64,69 @@ body {
         transition: .5s;
     }
 
-    .title:hover {
+    &__title:hover {
         color: $color-cyan-400;
     }
 
-    .desc {
+    &__desc {
         color: $color-blue-500;
         font-size: 1.125rem;
         font-weight: 300;
     }
 
-    .price-time-container {
+    &__price-time-container {
         display: flex;
         justify-content: space-between;
     }
 
-    .price {
+    &__price,
+    &__time {
         display: flex;
         align-items: center;
+        gap: $spacing-100;
     }
 
-    .price-text {
+    &__price-text {
         color: $color-cyan-400;
         font-size: 1rem;
         font-weight: 600;
         text-wrap: nowrap;
     }
 
-    .time {
-        display: flex;
-        align-items: center;
-    }
-
-    .time-text {
+    &__time-text {
         color: $color-blue-500;
         font-size: 1rem;
     }
 
-    .line {
+    &__divider {
         color: $color-blue-800;
         height: 1px;   
     }
 
-    .footer {
+    &__footer {
         display: flex;
         align-items: center;
+        gap: $spacing-200;
     }
 
-    .avatar-container {
+    &__avatar-container {
         border: solid 1px $color-white;
         border-radius: 50%;
     }
 
-    .author {
+    &__author {
         color: $color-blue-500;
         font-size: 1rem;
     }
 
-    .name {
+    &__name {
         color: $color-white;
         text-decoration: none;
         transition: .5s;
     }
 
-    .name:hover {
+    &__name:hover {
         color: $color-cyan-400;
     }
-}
-
-.u-flex-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.u-gap-1 {
-    gap: $spacing-100;
-}
-
-.u-gap-2 {
-    gap: $spacing-200;
-}
-
-.u-gap-3 {
-    gap: $spacing-300;
 }
 

@@ -44,21 +44,27 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .card {
-  margin: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  inline-size: 21.875rem;
+  block-size: 37.25rem;
   background-color: rgb(21, 38, 63);
   padding: 1.5rem;
   border-radius: 0.9375rem;
   font-family: "Outfit", sans-serif;
 }
-.card .hero-container {
+.card__hero-container {
   position: relative;
   border-radius: 0.5rem;
   overflow: hidden;
 }
-.card .hero-container::after {
+.card__hero-container::after {
   content: "";
   position: absolute;
   background: url("../images/icon-view.svg") no-repeat center rgba(0, 255, 248, 0.5);
@@ -69,10 +75,20 @@ body {
   opacity: 0;
   transition: 0.5s;
 }
-.card .hero-container:hover::after {
+.card__hero-container:hover::after {
   opacity: 1;
 }
-.card .title {
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.card__title {
   color: rgb(255, 255, 255);
   font-size: 1.5rem;
   line-height: 1.45;
@@ -80,74 +96,55 @@ body {
   text-decoration: none;
   transition: 0.5s;
 }
-.card .title:hover {
+.card__title:hover {
   color: rgb(0, 255, 248);
 }
-.card .desc {
+.card__desc {
   color: rgb(139, 172, 217);
   font-size: 1.125rem;
   font-weight: 300;
 }
-.card .price-time-container {
+.card__price-time-container {
   display: flex;
   justify-content: space-between;
 }
-.card .price {
+.card__price, .card__time {
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
-.card .price-text {
+.card__price-text {
   color: rgb(0, 255, 248);
   font-size: 1rem;
   font-weight: 600;
   text-wrap: nowrap;
 }
-.card .time {
-  display: flex;
-  align-items: center;
-}
-.card .time-text {
+.card__time-text {
   color: rgb(139, 172, 217);
   font-size: 1rem;
 }
-.card .line {
+.card__divider {
   color: rgb(46, 64, 90);
   height: 1px;
 }
-.card .footer {
+.card__footer {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
-.card .avatar-container {
+.card__avatar-container {
   border: solid 1px rgb(255, 255, 255);
   border-radius: 50%;
 }
-.card .author {
+.card__author {
   color: rgb(139, 172, 217);
   font-size: 1rem;
 }
-.card .name {
+.card__name {
   color: rgb(255, 255, 255);
   text-decoration: none;
   transition: 0.5s;
 }
-.card .name:hover {
+.card__name:hover {
   color: rgb(0, 255, 248);
-}
-
-.u-flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.u-gap-1 {
-  gap: 0.5rem;
-}
-
-.u-gap-2 {
-  gap: 1rem;
-}
-
-.u-gap-3 {
-  gap: 1.5rem;
 }
