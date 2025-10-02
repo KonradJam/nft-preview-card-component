@@ -20,7 +20,7 @@ This is a solution to the [NFT preview card component challenge on Frontend Ment
 
 ### Links
 
-Live Site URL: [GitHub Pages]()
+Live Site URL: [GitHub Pages](https://konradjam.github.io/nft-preview-card-component/)
 
 ## My process
 
